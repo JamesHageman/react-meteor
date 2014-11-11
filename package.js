@@ -1,6 +1,7 @@
 Package.describe({
   summary: "React rendering for Meteor apps",
-  git: 'https://github.com/JamesHageman/react-meteor.git'
+  git: 'https://github.com/JamesHageman/react-meteor.git',
+  version: '0.1.0'
 });
 
 var reactVersion = "0.12.0";
