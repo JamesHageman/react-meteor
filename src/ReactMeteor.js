@@ -1,6 +1,8 @@
 var ReactMeteorMixin = {
   _handleMeteorChange: function() {
-    this.setState(this.getMeteorState());
+    if (this.getMeteorState) {
+      this.setState(this.getMeteorState());
+    }
   },
 
   _cancelComputation: function() {
@@ -11,7 +13,7 @@ var ReactMeteorMixin = {
   },
 
   componentWillMount: function() {
-    this._meteorComputation = Deps.autorun(this._handleMeteorChange);
+    this._meteorComputation = Tracker.autorun(this._handleMeteorChange);
   },
 
   componentWillReceiveProps: function(nextProps) {
